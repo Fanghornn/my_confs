@@ -1,0 +1,15 @@
+#This file has to be located under the path:  /usr/lib/systemd/system/
+
+#To enable the service on system boot
+#sudo systemctl enable startup.service
+
+[Unit]
+Description=Useful app description
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/path/to/appdir/startup_script.sh
+
+[Install]
+WantedBy=multi-user.target
