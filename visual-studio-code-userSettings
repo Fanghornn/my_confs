@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "window.zoomLevel": 1,
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "smooth",
+    "editor.mouseWheelZoom": true,
+    "editor.renderIndentGuides": true
+}
