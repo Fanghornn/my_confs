@@ -1,0 +1,141 @@
+* Notes emacs
+
+** General knowledge
+
+   Start emacs in a term with the command emacs -nw
+
+*** Auto saving files system
+
+    Emacs save files automatically while editing them. This enables the user to recover his changes if he ran into a computer crash while using emacs.
+
+    Auto saved files are the named after the original file and surrounded by a pair of hashs.
+
+    Use named extend ( M-x ‘recover-file’) to recover files
+
+*** Mode line
+   
+   The bottom bar in Emacs is called the MODE LINE
+
+   It prints these informations:
+
+**** Mode line legend 
+     Charset: (u)
+
+     File status: (**-)
+     2 Stars if changes has been made to the current file
+     otherwise it’s 2 dash
+
+     File name: foo.org
+
+     File lenfth scrolled: 95% == near EOF | all === EOF in buffer view 
+
+     Point line number in buffer: 34
+
+     Current mode: org
+     ( C-h m ) Open your mode's documentation
+
+
+
+*** Echo area
+
+    The line below the Mode line, prints various information at some time while editing. Like named commands writing with M-x
+
+*** Customize utility:
+
+    ( M-x customize ): Display a buffer which offers to edit some emacs configuration groups
+
+    ( M-x customize-saved ): Prints user made customization
+
+    ( M-x customize-mode ): Customize the current buffer’s major mode
+
+
+** Key bindings
+
+*** Emacs:
+
+    ( C-x ): Character extend
+    ( M-x ): Named extend
+    ( M-x M-p ): Scroll back history of named extends)
+    ( C-x C-c ): Quit Emacs
+    ( C-z ): Quit Emacs temporary (Save buffer list)
+    ( C-h t ): Open Emacs tutorial
+    ( C-g ): Undo current emacs command (Also exit mini-buffers)
+    ( C-h COMMAND ): Open documentation for command
+    ( C-h c (ANY COMMAND KEY ): Echo function name ( purpose ) 			in echo bar
+    ( C-h k ): Open mini buffer and waits for a command binding to display it’s documentation
+    ( C-h a ): Search for a commands in emacs apropos system( NAMED EXTEND COMMANDS DOCUMENTATION CAN BE FOUND HERE ) (Support regex ("-word$" will find all commands that contains -word)
+    ( C-h f ): Wait for a function name in mini buffer and display it’s documentation.
+    ( C-h v ): Wait for a variable name in mini buffer and display it’s documentation
+    ( C-h i ): Open Emacs documentation
+    ( M-x apropos ): Open the apropos menu of emacs where you can search for everything (commands function variables) VERY USEFUL
+
+*** Mooving point:
+    
+    ( C-a ): Moove point to the begining of current line 
+    ( C-e ): Moove point to the end of current line
+    ( M-m ): Moove point to the first non-whitespace character
+    ( M-f ): Moove to next word
+    ( M-b ): Moove to previous word
+    ( C-M-d ): Moove to next list expression (balanced expressions)
+    ( C-M-n/p ): Moove to next list expression in the next list
+    ( C-M-} ): Moove forward to end of paragraph
+    ( C-M-{ ): Moove backward to start of paragraph
+
+*** Frames/Windows:G
+    Frames are a graphical reprensatation object (lisp object) that can contain one or more windows. You can create another frames and switch between frames. Consider that emacs frames are the well known 'windows' of the classical GUIs.
+    If emacs run in a terminal, you can display only one frame at a time, on the other hand, when running a GUI emacs, you can have multiples frames opened.
+
+    https://www.gnu.org/software/emacs/manual/html_node/elisp/Windows.html#Windows
+    https://www.gnu.org/software/emacs/manual/html_node/elisp/Frames.html#Frames
+
+    ( C-x 0 ): Close current window without killing buffer
+    ( C-x 1 ): Kill all windows except the current one
+    ( C-x 2 ): Split window horizontally
+    ( C-x 3 ): Split window vertically
+    ( C-x o ): Switch window
+    ( C-x 4 ): Enable the user to perform operation in another window than current one (IE: ( C-x 4 f ) will open a file in another window and then switch to it. ( C-x 4 d ) opens the dired mode in another window. (Use ( C-x 4 h) for more commands)
+
+*** Deletion:
+    Del-back: Kill the char Immediately before the cursor
+    ( C-d ): Kill the char immediately after the cursor
+    ( C-k ): Kill from cursor to end of line
+    ( M-k ): Kill the next sentence
+    ( M-Del-back ): Kill the word immediately before the cursor
+    ( M-d ): Kill the word immediately after the cursor
+    ( C-w ): Kill the current marked text (see Mark set)
+
+*** Edition:
+    ( C-x u | C-_ ): Undo the previous edition
+    ( C-x ) 2times: Undo the previous command
+    ( C-y ): Yank back previously killed line (from C-k)
+    ( M-y ): Yank back with internal buffer
+    ( M-w ): Put selection in clip board without killing it
+    ( C-/ ): Ctrl + z undo like
+
+*** Selection:
+    ( C-<SPC> ): Toggle mode “Mark set” to select some text
+
+*** Files:
+    ( C-x C-f ): Find file
+    ( C-x k ): Quit current file
+    ( C-x C-s ): Save the current file
+    ( C-x s ): Save current file with prompt
+    ( C-x d ): Navigate through files in dired(directory edit) mode 
+	
+*** Buffers:
+    ( C-x C-b ): List buffers
+    ( C-x b ): Switch buffer
+    ( C-x k ): Kill current buffer
+    ( C-x C-q ): Toggle read only in current buffer
+                 		
+
+*** Searching:
+    ( C-s ): Forward search
+    ( C-r ): Backward search
+
+    Type the command again to navigate through search results occurences
+
+    I-search in the Echo Area means that emacs is using the Incremental searching (Trigger search for each keyup when typing what to search)
+
+** TODO Faire un tableau de commande emacs 
+
